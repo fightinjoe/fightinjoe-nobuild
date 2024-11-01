@@ -1,0 +1,123 @@
+:root {
+  --yellow-50: #fffbea;
+  --yellow-100: #fff3c4;
+  --yellow-200: #fde68a;
+  --yellow-400: #f59e0b;
+
+  --teal-50: #edf9f9;
+  --teal-100: #d5f5f6;
+
+  --smoke-600: #6b7280;
+  --smoke-800: #374151;
+  --smoke-900: #1f2937;
+
+  --link-bg-color: var(--yellow-50);
+  --link-border-color: var(--yellow-200);
+  --link-hover-bg-color: var(--yellow-100);
+  --link-hover-border-color: var(--yellow-400);
+
+  --transition-time: 0.2s;
+  --transition-fn: ease-in-out;
+}
+
+.font-title {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Undo default styling */
+h1, p, small {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+.default {
+  font-family: Inter, Roboto, Helvetica, sans-serif;
+  line-height: 1.5rem;
+
+  main {
+    max-width: 640px;
+    height: 100vh;
+    margin: auto;
+  }
+
+  a {
+    display: inline-block;
+    border-radius: 0.25rem 0.25rem 0 0;
+
+    color: Black;
+    text-decoration: none;
+    background-color: var(--link-bg-color);
+    border-bottom: 2px solid var(--link-border-color);
+
+    transition: background-color var(--transition-time) var(--transition-fn),
+                border-color     var(--transition-time) var(--transition-fn);
+
+    &:hover {
+      background-color: var(--link-hover-bg-color);
+      border-color: var(--link-hover-border-color);
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+    line-height: 3.5rem;
+  }
+
+  p {
+    color: var(--smoke-800);
+  }
+
+  small {
+    font-weight: 200;
+    font-size: 0.85rem;
+    color: var(--smoke-600);
+  }
+
+  em {
+    font-style: normal;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+
+    background-color: var(--teal-50);
+
+    transition: background-color var(--transition-time) var(--transition-fn),
+                border-color     var(--transition-time) var(--transition-fn);
+
+    &:hover {
+      background-color: var(--teal-100);
+    }
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+main.blog {
+  margin-top: 6rem;
+}
+
+/* Generic formatting classes */
+.col {
+  display: flex;
+  flex-direction: column;
+
+  &.g2 { gap: 1rem; }
+  &.g4 { gap: 2rem; }
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.block {
+  display: block;
+}
