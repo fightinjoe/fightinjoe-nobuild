@@ -151,8 +151,8 @@ nav {
       padding: var(--size-3);
       margin: 0 !important;
       cursor: pointer;
-      transition: background-color var(--transition-time) var(--transition-fn),
-                  border-bottom    var(--transition-time) var(--transition-fn);
+      border-color: var(--yellow-200);
+      transition: background-color var(--transition-time) var(--transition-fn);
 
       &:hover {
         background-color: var(--yellow-50);
