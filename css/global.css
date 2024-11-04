@@ -1,7 +1,7 @@
 :root {
   --yellow-50: #fffbea;
   --yellow-100: #fff3c4;
-  --yellow-200: #fde68a;
+  --yellow-200: #FEF08A;
   --yellow-400: #f59e0b;
 
   --teal-50: #edf9f9;
@@ -18,6 +18,30 @@
 
   --transition-time: 0.2s;
   --transition-fn: ease-in-out;
+
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 1rem;
+  --size-4: 1.5rem;
+  --size-5: 2rem;
+  --size-6: 2.5rem;
+  --size-7: 3rem;
+  --size-8: 3.5rem;
+  --size-9: 4rem;
+
+
+  --font-xl: var(--size-9);
+  --font-lg: var(--size-4);
+  --font-normal: var(--size-3);
+  --font-sm: 0.85rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+html * {
+  box-sizing: border-box;
 }
 
 .font-title {
@@ -31,7 +55,7 @@
 h1, p, small {
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: var(--font-normal);
 }
 
 ul, li {
@@ -40,18 +64,9 @@ ul, li {
   list-style-type: none;
 }
 
-ul.list li {
-  margin-left: 2rem;
-  list-style-type: disc;
-}
-
-html {
-  font-size: 16px;
-}
-
 .default {
   font-family: Inter, Roboto, Helvetica, sans-serif;
-  line-height: 1.5rem;
+  line-height: var(--size-4);
 
   main {
     max-width: 640px;
@@ -61,7 +76,7 @@ html {
 
   a {
     display: inline-block;
-    border-radius: 0.25rem 0.25rem 0 0;
+    border-radius: var(--size-1) var(--size-1) 0 0;
 
     color: Black;
     text-decoration: none;
@@ -78,8 +93,8 @@ html {
   }
 
   h1 {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: var(--font-xl);
+    line-height: var(--size-8);
   }
 
   p {
@@ -94,8 +109,8 @@ html {
 
   em {
     font-style: normal;
-    padding: 0.25rem;
-    border-radius: 0.25rem;
+    padding: var(--size-1);
+    border-radius: var(--size-1);
 
     background-color: var(--teal-50);
 
@@ -108,12 +123,62 @@ html {
   }
 
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--size-2);
   }
+}
+
+ul.list li {
+  margin-left: var(--size-5);
+  list-style-type: disc;
 }
 
 main.blog {
   margin-top: 6rem;
+}
+
+/* Navigation */
+
+nav {
+  position: relative;
+  font-size: var(--font-lg);
+
+  ul {
+    width: 50%;
+  }
+
+  & > ul {
+    li {
+      padding: var(--size-3);
+      margin: 0 !important;
+      cursor: pointer;
+      transition: background-color var(--transition-time) var(--transition-fn),
+                  border-bottom    var(--transition-time) var(--transition-fn);
+
+      &:hover {
+        background-color: var(--yellow-50);
+      }
+
+      &.sel {
+        background-color: var(--yellow-100);
+        border-bottom: 4px solid var(--yellow-200);
+        padding-bottom: calc( var(--size-3) - 4px );
+      }
+    }
+
+    /* Sub-menu */
+    ul {
+      display: none;
+    }
+
+    li.sel ul {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      width: 50%;
+    }
+  }
 }
 
 /* Generic formatting classes */
