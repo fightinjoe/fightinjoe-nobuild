@@ -25,8 +25,12 @@ class MainPage {
     // Only operate on nav items at data-level 1
     if (elt.dataset.level !== '1') return
 
-    // Ignore if the same nav is clicked
-    if (elt === this._nav1) return
+    // Deselect if the same nav is clicked
+    if (elt === this._nav1) {
+      this._nav1.classList.remove('sel')
+      this._nav1 = null
+      return
+    }
 
     // unselect the child nav
     this.nav2 = null
