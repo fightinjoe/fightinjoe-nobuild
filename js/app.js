@@ -25,35 +25,27 @@ class MainPage {
     // Only operate on nav items at data-level 1
     if (elt.dataset.level !== '1') return
 
-    // Deselect if the same nav is clicked
-    if (elt === this._nav1) {
-      this._nav1.classList.remove('sel')
-      this._nav1 = null
-      return
-    }
+    const nulling = elt === this._nav1
 
-    // unselect the child nav
+    // Deselect the current nav and children
+    if (this._nav1) this._nav1.classList.remove('sel')
     this.nav2 = null
 
-    // Deselect the current nav and select the new one
-    if (this._nav1) this._nav1.classList.remove('sel')
-    elt.classList.add('sel')
-    this._nav1 = elt
+    // Select the new nav item
+    this._nav1 = nulling ? null : elt
+    if (!nulling) this._nav1.classList.add('sel')
   }
 
   get nav2() { return this._nav2 }
   set nav2( elt ) {
-    // Deselection
-    if (elt === null || elt === this._nav2) {
-      if (this._nav2) this._nav2.classList.remove('sel')
-      this._nav2 = null
-      return
-    }
+    const nulling = elt === null || elt === this._nav2
 
+    // remove any currently selected nav item
     if (this._nav2) this._nav2.classList.remove('sel')
-    elt.classList.add('sel')
-
-    this._nav2 = elt
+    
+    // select the new nav item
+    this._nav2 = nulling ? null : elt
+    if (!nulling) elt.classList.add('sel')
   }
 
   handleNavClick(e) {

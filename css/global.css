@@ -163,20 +163,25 @@ nav {
         border-bottom: 4px solid var(--yellow-200);
         padding-bottom: calc( var(--size-3) - 4px );
       }
-    }
 
-    /* Sub-menu */
-    ul {
-      display: none;
-    }
+      ul {
+        position: absolute;
+        top: 0;
+        left: 50%;
+  
+        width: 50%;
+  
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(10%);
+        transition: all var(--transition-time) var(--transition-fn);
+      }
 
-    li.sel ul {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 50%;
-
-      width: 50%;
+      &.sel ul {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 }
