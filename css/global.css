@@ -34,6 +34,17 @@ h1, p, small {
   font-size: 1rem;
 }
 
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.list li {
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+
 html {
   font-size: 16px;
 }
