@@ -2,7 +2,8 @@
   --yellow-50: #fffbea;
   --yellow-100: #fff3c4;
   --yellow-200: #FEF08A;
-  --yellow-400: #f59e0b;
+  --yellow-300: #FDE047;
+  --yellow-400: #FACC15 ;
 
   --teal-50: #edf9f9;
   --teal-100: #d5f5f6;
@@ -158,10 +159,39 @@ nav {
         background-color: var(--yellow-50);
       }
 
+      &::after {
+        content: "arrow_forward_ios";
+        color: var(--yellow-200);
+
+        /* position: absolute; */
+        /* right: var(--size-2); */
+        float: right;
+        transform: translateY(-10%);
+
+        font-family: 'Material Symbols Outlined';
+        font-weight: lighter;
+        font-style: normal;
+        font-size: 2rem;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+      }
+
       &.sel {
         background-color: var(--yellow-100);
         border-bottom: 4px solid var(--yellow-200);
         padding-bottom: calc( var(--size-3) - 4px );
+
+        &::after {
+          content: "close";
+          color: var(--yellow-300);
+        }
       }
 
       ul {
