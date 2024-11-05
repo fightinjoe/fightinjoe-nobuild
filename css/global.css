@@ -162,6 +162,8 @@ nav {
       &::after {
         content: "arrow_forward_ios";
         color: var(--yellow-200);
+        opacity: 1;
+        transition: opacity var(--transition-time) var(--transition-fn);
 
         /* position: absolute; */
         /* right: var(--size-2); */
@@ -212,6 +214,20 @@ nav {
         opacity: 1;
         transform: translateX(0);
       }
+    }
+  }
+
+  /* Control the display of the '>' in nav items so that when one nav item is selected,
+  /* its siblings hide their '>' icon */
+  &[data-level="1"], &[data-level="2"] {
+    li[data-level="1"]:not(.sel)::after {
+      opacity: 0;
+    }
+  }
+
+  &[data-level="2"] {
+    li[data-level="2"]:not(.sel)::after {
+      opacity: 0;
     }
   }
 }

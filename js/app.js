@@ -34,6 +34,9 @@ class MainPage {
     // Select the new nav item
     this._nav1 = nulling ? null : elt
     if (!nulling) this._nav1.classList.add('sel')
+    
+    // Update the level in the nav element
+    this.navElt.dataset.level = nulling ? '0' : '1'
   }
 
   get nav2() { return this._nav2 }
@@ -46,6 +49,11 @@ class MainPage {
     // select the new nav item
     this._nav2 = nulling ? null : elt
     if (!nulling) elt.classList.add('sel')
+
+    this._nav2 = nulling ? null : elt
+    
+    // Update the level in the nav element
+    this.navElt.dataset.level = nulling ? '1' : '2'
   }
 
   handleNavClick(e) {
