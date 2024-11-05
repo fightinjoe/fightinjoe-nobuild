@@ -8,6 +8,8 @@
   --teal-50: #edf9f9;
   --teal-100: #d5f5f6;
 
+  --smoke-50: #f9fafb;
+  --smoke-100: #f3f4f6;
   --smoke-600: #6b7280;
   --smoke-800: #374151;
   --smoke-900: #1f2937;
@@ -53,7 +55,7 @@ html * {
 }
 
 /* Undo default styling */
-h1, p, small {
+h1, h2, h3, p, small {
   margin: 0;
   padding: 0;
   font-size: var(--font-normal);
@@ -98,6 +100,11 @@ ul, li {
     line-height: var(--size-8);
   }
 
+  h2 {
+    font-size: var(--font-lg);
+    line-height: var(--size-5);
+  }
+
   p {
     color: var(--smoke-800);
   }
@@ -138,10 +145,10 @@ main.blog {
 }
 
 /* Navigation */
-
 nav {
   position: relative;
   font-size: var(--font-lg);
+  transition: transform var(--transition-time) var(--transition-fn);
 
   ul {
     width: 50%;
@@ -165,8 +172,6 @@ nav {
         opacity: 1;
         transition: opacity var(--transition-time) var(--transition-fn);
 
-        /* position: absolute; */
-        /* right: var(--size-2); */
         float: right;
         transform: translateY(-10%);
 
@@ -226,8 +231,68 @@ nav {
   }
 
   &[data-level="2"] {
+    transform: translateX(-50%);
+
     li[data-level="2"]:not(.sel)::after {
       opacity: 0;
+    }
+  }
+}
+
+/* Section styling */
+body {
+  section {
+    position: absolute;
+    inset: 0 0 0 50%;
+    background: var(--smoke-100);
+
+    box-shadow: inset 4px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    padding: var(--size-4);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4);
+
+    transform: translateX(320px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-time) var(--transition-fn);
+
+    &.sel {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    p {
+      margin-bottom: var(--size-2);
+    }
+  }
+
+  &:not([data-section="" ]) section {
+    transform: translateX(0);
+  }
+}
+
+.mobile {
+  border: 5px solid Black;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 5px rgba(0,0,0,0.2);
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  width: 260px;
+  margin: auto;
+  
+  overflow-y: scroll;
+
+  img {
+    width: 100%;
+
+    &.header {
+      position: sticky;
+      top: 0;
     }
   }
 }
@@ -247,4 +312,9 @@ nav {
 
 .block {
   display: block;
+}
+
+img.focus {
+  border-radius: var(--size-2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }

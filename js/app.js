@@ -4,11 +4,13 @@ class MainPage {
   _nav2
 
   /** Internal state for tracking DOM elements */
-  contentElt
+  bodyElt
   navElt
+  sectionElt
 
   constructor() {
-    // register content container
+    // register body container
+    this.bodyElt = document.querySelector('body')
 
     // register navigation
     this.navElt = document.querySelector('nav')
@@ -27,9 +29,11 @@ class MainPage {
 
     const nulling = elt === this._nav1
 
-    // Deselect the current nav and children
+    // Deselect the current nav, children, and current section
     if (this._nav1) this._nav1.classList.remove('sel')
     this.nav2 = null
+    this.bodyElt.dataset.section = ''
+    if (this.sectionElt) this.sectionElt.classList.remove('sel')
 
     // Select the new nav item
     this._nav1 = nulling ? null : elt
@@ -54,6 +58,17 @@ class MainPage {
     
     // Update the level in the nav element
     this.navElt.dataset.level = nulling ? '1' : '2'
+
+    // Update the current section
+    this.bodyElt.dataset.section = nulling ? '' : elt.dataset.section
+    if (this.sectionElt) this.sectionElt.classList.remove('sel')
+
+    if (nulling) {
+      this.sectionElt = null
+    } else {
+      this.sectionElt = document.querySelector(`section[data-section="${elt.dataset.section}"]`)
+      this.sectionElt.classList.add('sel')
+    }
   }
 
   handleNavClick(e) {

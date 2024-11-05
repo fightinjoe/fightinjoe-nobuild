@@ -16,56 +16,137 @@
     <title>Aaron Wheeler</title>
 </head>
 <script src="/js/app.js"></script>
-<body class="default">
+<body class="default" data-section="">
   <main class="col g4 justify-center">
     <h1 class="font-title">Aaron<br />Wheeler</h1>
 
     <nav data-level="">
       <ul>
         <li data-level="1">
+          About
+          <ul>
+            <li data-level="2" data-section="about">Bio</li>
+            <li data-level="2" data-section="linkedin">LinkedIn</li>
+            <li data-level="2" data-section="github">GitHub</li>
+            <li data-level="2" data-section="email">aaron@fightinjoe.com</li>
+          </ul>
+        </li>
+        <li data-level="1">
           Portfolio
           <ul>
-            <li data-level="2">MFA Racing</li>
-            <li data-level="2">LocalBy</li>
-            <li data-level="2">🤣 Emoji Everywhere</li>
-            <li data-level="2">Meet Polls</li>
-            <li data-level="2">Connected Sheets</li>
-            <li data-level="2">Speaking / teaching</li>
+            <li data-level="2" data-section="mfa">MFA Racing</li>
+            <li data-level="2" data-section="localby">LocalBy</li>
+            <li data-level="2" data-section="emoji">🤣 Emoji Everywhere</li>
+            <li data-level="2" data-section="meet">Meet Polls</li>
+            <li data-level="2" data-section="sheets">Connected Sheets</li>
+            <li data-level="2" data-section="edu">Speaking / teaching</li>
           </ul>
         </li>
         <li data-level="1">
           Writing
           <ul>
-            <li data-level="2">LocalBy</li>
-            <li data-level="2">Craft</li>
+            <li data-level="2" data-section="blog-localby">LocalBy</li>
+            <li data-level="2" data-section="blog-craft">Craft</li>
           </ul>
         </li>
         <li data-level="1">
           Art / Craft
           <ul>
-            <li data-level="2">Postcards</li>
-            <li data-level="2">Sauna</li>
-            <li data-level="2">Fiber art</li>
-          </ul>
-        </li>
-        <li data-level="1">
-          Contact
-          <ul>
-            <li data-level="2">About</li>
-            <li data-level="2">LinkedIn</li>
-            <li data-level="2">GitHub</li>
-            <li data-level="2">aaron@fightinjoe.com</li>
+            <li data-level="2" data-section="postcards">Postcards</li>
+            <li data-level="2" data-section="sauna">Sauna</li>
+            <li data-level="2" data-section="fiber">Fiber art</li>
           </ul>
         </li>
       </ul>
     </nav>
-
-    <!-- <p>
-      <a href="mailto://aaron@fightinjoe.com">aaron@fightinjoe.com</a>
-      &nbsp;-&nbsp;
-      <a href="https://www.linkedin.com/in/fightinjoe">LinkedIn</a>
-    </p> -->
   </main>
+
+  <section data-section="mfa">
+    <img class="focus" style="border-radius: 50%;" src="/public/imgs/mfa.png" alt="MFA Racing logo" />
+    <h2 class="font-title">MFA Racing</h2>
+    <div>
+      <p><a href="https://www.mamaroneckfrostbite.org/" target="_blank"><strong>Mamaroneck Frostbite Association</strong></a> (MFA) is my local community sailing organization. Over 65+ year old, I've been winter sailing with them since 2015.</p>
+      <p>I volunteer annually as scorekeeper and webmaster.</p>
+      <p>My work includes:</p>
+      <ul class="list">
+        <li>branding and logo creation for MFA</li>
+        <li>Google Sheets macros for score tabulation</li>
+        <li>React + TypeScript web app design, engineering, and testing for recording scores</li>
+      </ul>
+    </div>
+  </section>
+
+  <section data-section="localby">
+    <div class="mobile">
+      <img class="header" src="/public/imgs/mobile-header.png" alt="Mobile header" />
+      <img src="/public/imgs/localby.home.png" alt="LocalBy" />
+    </div>
+    <h2 class="font-title">LocalBy</h2>
+    <div>
+      <p>I cofounded <a href="https://localby.co" target="_blank">LocalBy</a> with Jackie Bernhelm to help support local makers and preserve their craft.</p>
+      <p>I lead <strong>product, engineering, and design</strong> to launch successful “digital popup” marketplaces, proving our ability to attract both local buyers and sellers.</p>
+      <p>I <strong>hired, managed, and worked</strong> alongside multiple engineers and designers to implement the IA and eng designs I created.</p>
+    </div>
+  </section>
+
+  <section data-section="emoji">
+    <img class="focus" src="/public/imgs/emoji.gif" alt="Emoji Everywhere" />
+    <h2 class="font-title">🤣Emoji Everywhere</h2>
+    <div>
+      <p><strong>Emoji Everywhere</strong> is a passion project that solves a simple problem: emoji support in Google products.</p>
+      <p>It’s a Chrome extension that provides Slack-style emoji support when typing a “:”</p>
+      <p>The code is <a href="https://github.com/fightinjoe/emoji_everywhere">open sourced</a> and can be installed from the <a href="https://chrome.google.com/webstore/detail/emoji-everywhere/gkioepjihedplkkbjffmcncnbmmnnpkc" target="_blank">Chrome web store</a>. </p>
+      <h3 class="font-title">Responsibilities</h3>
+      <p>I'm the sole designer, engineer, and maintainer.</p>
+    </div>
+  </section>
+
+  <section data-section="meet">
+    <h2 class="font-title">Meet Polls</h2>
+    <div>
+      <p><a href="https://cloud.google.com/blog/products/google-meet/introducing-qa-and-polls-in-google-meet" target="_blank"><strong>Polls in Meet</strong></a> addresses the work-from-home needs of over <a href="https://cloud.google.com/blog/products/google-meet/introducing-qa-and-polls-in-google-meet" target="_blank">100M customers due to 30x growth</a> in Google Meet in the spring of 2020.</p>
+      <p>As <strong>design lead</strong>, my designs and robust prototype empowered the launch of Polls in Meet in six months, as well as its sister feature Q&A.</p>
+      <p>This feature <a href="https://cloud.google.com/blog/products/google-meet/introducing-qa-and-polls-in-google-meet" target="_blank">launched in Oct. 2020</a>.</p>
+    </div>
+  </section>
+
+  <section data-section="sheets">
+    <h2 class="font-title">Connected Sheets</h2>
+    <div>
+      <p><a href="https://gsuite.google.com/campaigns/index__sheets-connectedsheet.html" target="_blank"><strong>Connected Sheets</strong></a> is a flagship feature for Google Sheets that enables spreadsheet access and analysis of big cloud data.</p>
+      <p>As <strong>prototyping lead</strong>, my end-to-end prototype brought to life the highly complex experience of connecting, browsing, filtering, charting, and pivoting cloud data in a spreadsheet.</p>
+      <p>This feature launched in H1 2020.</p>
+    </div>
+  </section>
+
+  <section data-section="edu">
+    <h2 class="font-title">Teaching, speaking</h2>
+    <div>
+      <p>Presentations, curriculum, roadmaps and overviews on topics about UX engineering, hiring, productivity, and user-centered design.</p>
+    </div>
+
+    <h2 class="font-title">Hiring, evangelizing</h2>
+    <div>
+      <p>Conducted 200+ interviews for UXE roles, culminating with leading and delivering a revamped hiring process, complete with new interview questsions, standardized rubrics for evaluation, and alignment with company-wide DEI efforts.</p>
+    </div>
+
+    <h2 class="font-title">Accessibility UX lead</h2>
+    <div>
+      <p>Created and conducted training, filed and prioritized bugs, and organized A11y bug bash week.</p>
+    </div>
+  </section>
+
+  <section data-section="blog-localby">blog-localby</section>
+  <section data-section="blog-craft">blog-craft</section>
+
+  <section data-section="postcards">postcards</section>
+  <section data-section="sauna">sauna</section>
+  <section data-section="fiber">fiber</section>
+
+  <section data-section="about">about</section>
+  <section data-section="linkedin">linkedin</section>
+  <section data-section="github">github</section>
+  <section data-section="email">email</section>
 </body>
 <script>
   new MainPage()
