@@ -266,6 +266,22 @@ body {
     p {
       margin-bottom: var(--size-2);
     }
+
+    &[data-section="meet"] .image {
+      position: relative;
+      
+      img {
+        width: 100%;
+      }
+
+      img:nth-child(2) {
+        position: absolute;
+        top: 8%;
+        right: 13%;
+        transform: scale(0.219);
+        transform-origin: top right;
+      }
+    }
   }
 
   &:not([data-section="" ]) section {
