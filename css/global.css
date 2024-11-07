@@ -51,6 +51,7 @@ html * {
 
 body {
   overflow: hidden;
+  margin: 0;
 }
 
 .font-title {
@@ -270,6 +271,7 @@ body {
     .wrapper {
       width: calc( 3 / 5 * var(--width) );
       min-height: 100vh;
+      padding: 50px 0;
 
       display: flex;
       flex-direction: column;
@@ -281,15 +283,16 @@ body {
       margin-bottom: var(--size-2);
     }
 
-    &[data-section="meet"] .image {
-      position: relative;
+    .image {position: relative;
       width: 150%;
       transform: translateX(-30%);
       
       img {
         width: 100%;
       }
+    }
 
+    &[data-section="meet"] .image {
       img:nth-child(2) {
         position: absolute;
         top: 8%;
@@ -298,7 +301,19 @@ body {
         transform-origin: top right;
       }
     }
+
+    &[data-section="sheets"] .image {
+      img:first-child {
+        position: absolute;
+        top: 8%;
+        right: 12%;
+        transform: scale(0.7);
+        transform-origin: top right;
+      }
+    }
   }
+
+
 
   &:not([data-section="" ]) section {
     transform: translateX(0);
@@ -328,6 +343,33 @@ body {
       position: sticky;
       top: 0;
     }
+  }
+}
+
+ul.resume {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+
+  & > li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-1);
+  }
+
+  & > li > div:first-child {
+    img {
+      height: 40px;
+    }
+
+    a {
+      background: none;
+      border: none;
+    }
+  }
+
+  & > li > div:not(:first-child) {
+    margin-left: var(--size-4);
   }
 }
 
