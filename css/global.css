@@ -37,6 +37,8 @@
   --font-lg: var(--size-4);
   --font-normal: var(--size-3);
   --font-sm: 0.85rem;
+
+  --width: 640px;
 }
 
 html {
@@ -45,6 +47,10 @@ html {
 
 html * {
   box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
 }
 
 .font-title {
@@ -72,7 +78,7 @@ ul, li {
   line-height: var(--size-4);
 
   main {
-    max-width: 640px;
+    max-width: var(--width);
     height: 100vh;
     margin: auto;
   }
@@ -245,13 +251,11 @@ body {
     position: absolute;
     inset: 0 0 0 50%;
     background: var(--smoke-100);
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     box-shadow: inset 4px 0px 4px 0px rgba(0, 0, 0, 0.1);
     padding: var(--size-4);
-
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-4);
 
     transform: translateX(320px);
     opacity: 0;
@@ -263,12 +267,24 @@ body {
       visibility: visible;
     }
 
+    .wrapper {
+      width: calc( 3 / 5 * var(--width) );
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-4);
+      justify-content: center;
+    }
+
     p {
       margin-bottom: var(--size-2);
     }
 
     &[data-section="meet"] .image {
       position: relative;
+      width: 150%;
+      transform: translateX(-30%);
       
       img {
         width: 100%;
@@ -297,8 +313,10 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   
   width: 260px;
+  height: 565px;
   margin: auto;
   
   overflow-y: scroll;
