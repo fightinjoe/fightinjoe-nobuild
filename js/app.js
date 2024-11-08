@@ -20,6 +20,11 @@ class MainPage {
     navItems.forEach((item) => {
       item.addEventListener('click', this.handleNavClick.bind(this))
     })
+
+    let closeButton = document.querySelector('button.section-close')
+    if (closeButton) {
+      closeButton.addEventListener('click', this.closeSection.bind(this) )
+    }
   }
 
   get nav1() { return this._nav1 }
@@ -69,6 +74,11 @@ class MainPage {
       this.sectionElt = document.querySelector(`section[data-section="${elt.dataset.section}"]`)
       this.sectionElt.classList.add('sel')
     }
+  }
+
+  // Closes the currently open section
+  closeSection() {
+    if (this.nav2) this.nav2 = null
   }
 
   handleNavClick(e) {
