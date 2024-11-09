@@ -375,6 +375,10 @@ body {
 }
 
 @media (max-width: 640px) {
+  main > h1.font-title {
+    margin-left: var(--size-2);
+  }
+
   nav {
     ul {
       min-width: 320px;
