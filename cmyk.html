@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMYK Blending</title>
+  <link rel="stylesheet" href="global.css">
+  <style>
+    .cmyk-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .rgb {
+      width: 50px;
+      height: 50px;
+      border: 1px solid Black;
+    }
+
+    .cmyk {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: multiply;
+      opacity: 1;
+
+      border-radius: 100px;
+    }
+
+    .c {
+      background-color: cyan;
+    }
+
+    .m {
+      background-color: magenta;
+      transform: translateX(50%);
+    }
+
+    .y {
+      background-color: yellow;
+      transform: translateY(50%);
+    }
+
+    .k {
+      background-color: black;
+      transform: translate(50%, 50%);
+      opacity: 0.1;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <input type="text" />
+    <button>Submit</button>
+  </form>
+  <div class="rgb"></div>
+  <div class="cmyk-container">
+    <div class="cmyk c"></div>
+    <div class="cmyk m"></div>
+    <div class="cmyk y"></div>
+    <div class="cmyk k"></div>
+  </div>
+</body>
+<script>
+  function rgbToCmyk(r, g, b) {
+    // Normalize RGB values to [0, 1]
+    const rNorm = r / 255;
+    const gNorm = g / 255;
+    const bNorm = b / 255;
+
+    // Calculate CMY values
+    const c = 1 - rNorm;
+    const m = 1 - gNorm;
+    const y = 1 - bNorm;
+
+    // Calculate K value
+    const k = Math.min(c, m, y);
+
+    // Calculate final CMYK values
+    const cFinal = (c - k) / (1 - k) || 0;
+    const mFinal = (m - k) / (1 - k) || 0;
+    const yFinal = (y - k) / (1 - k) || 0;
+    const kFinal = k;
+
+    return {
+      c: cFinal,
+      m: mFinal,
+      y: yFinal,
+      k: kFinal
+    };
+  }
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const input = form.querySelector('input');
+    const rgb = input.value.match(/.{2}/g).map(s => parseInt(s,16));
+    const cmyk = rgbToCmyk(...rgb);
+
+    const rgbContainer = document.querySelector('.rgb');
+    rgbContainer.style.backgroundColor = `#${input.value}`;
+
+    const cmykContainers = document.querySelectorAll('.cmyk');
+    cmykContainers.forEach(function (container, index) {
+      const key = Object.keys(cmyk)[index];
+      container.style.opacity = cmyk[key];
+    });
+  });
+</script>
+</html>
