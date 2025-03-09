@@ -54,8 +54,11 @@ html * {
 }
 
 body {
-  overflow: hidden;
   margin: 0;
+
+  &.fixed-height {
+    overflow: hidden;
+  }
 }
 
 .font-title {
