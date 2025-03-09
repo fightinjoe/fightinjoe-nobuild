@@ -530,6 +530,12 @@ ul.resume {
   &.g4 { gap: 2rem; }
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-4);
+}
+
 ul.list li {
   margin-left: var(--size-5);
   list-style-type: disc;
@@ -546,4 +552,8 @@ ul.list li {
 img.focus {
   border-radius: var(--size-2);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }
