@@ -531,12 +531,21 @@ ul.resume {
 
   &.g2 { gap: 1rem; }
   &.g4 { gap: 2rem; }
+
+  & > img.x2-3 {
+    width: calc(66.666% - var(--size-4)/2);
+  }
 }
 
 .row {
   display: flex;
   flex-direction: row;
-  gap: var(--size-4);
+  gap: var(--size-3);
+  position: relative;
+
+  & > img.x2 {
+    width: calc(50% - var(--size-4)/2);
+  }
 }
 
 ul.list li {
@@ -552,7 +561,8 @@ ul.list li {
   display: block;
 }
 
-img.focus {
+img.focus,
+video.focus {
   border-radius: var(--size-2);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   flex: 1;
