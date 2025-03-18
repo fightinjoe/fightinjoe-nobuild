@@ -1,0 +1,37 @@
+main.blog {
+  margin-top: 6rem;
+  max-width: 96vw;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-xl: var(--size-6);
+  }
+
+  h1 {
+    line-height: var(--size-6);
+    small {
+      line-height: var(--size-4);
+    }
+  }
+
+  main.blog {
+    margin-top: 3rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 481px) {
+  .row {
+    & > img.x2 {
+      width: calc(50% - var(--size-4)/2);
+    }
+  }
+
+  .two3rd {
+    flex:0 0 66%;
+  }
+}

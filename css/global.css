@@ -207,10 +207,6 @@ summary + * {
   }
 }
 
-main.blog {
-  margin-top: 6rem;
-}
-
 /* Navigation */
 nav {
   position: relative;
@@ -542,10 +538,6 @@ ul.resume {
   flex-direction: row;
   gap: var(--size-3);
   position: relative;
-
-  & > img.x2 {
-    width: calc(50% - var(--size-4)/2);
-  }
 }
 
 ul.list li {
