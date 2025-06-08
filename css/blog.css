@@ -31,6 +31,14 @@ main.blog {
     }
   }
 
+  .one3rd {
+    flex:0 0 33%;
+  }
+
+  .oneHalf {
+    flex:0 0 50%;
+  }
+
   .two3rd {
     flex:0 0 66%;
   }
