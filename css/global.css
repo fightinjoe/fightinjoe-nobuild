@@ -170,11 +170,19 @@ summary + * {
   h1 {
     font-size: var(--font-xl);
     line-height: var(--size-8);
+
+    &.thin {
+      font-weight: 300;
+    }
   }
 
   h2 {
     font-size: var(--font-lg);
     line-height: var(--size-5);
+
+    &.thin {
+      font-weight: 300;
+    }
   }
 
   p {
@@ -527,7 +535,7 @@ ul.resume {
 
   &.g2 { gap: 1rem; }
   &.g4 { gap: 2rem; }
-
+  
   & > img.x2-3 {
     width: calc(66.666% - var(--size-4)/2);
   }
@@ -538,6 +546,9 @@ ul.resume {
   flex-direction: row;
   gap: var(--size-3);
   position: relative;
+  
+  &.g2 { gap: 1rem; }
+  &.g4 { gap: 2rem; }
 }
 
 ul.list li {
